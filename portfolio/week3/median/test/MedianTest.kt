@@ -15,19 +15,19 @@ class MedianTest : FreeSpec({
             median(listOf())
         }
     }
-    "Size of 1: median is the only element" {
-        median(listOf(7.0f)) shouldBe (7.0f plusOrMinus tolerance)
+    "Size 1: median is the only element present" {
+        median(listOf(3.5f)) shouldBe (3.5f plusOrMinus tolerance)
     }
 
-    "Size of 2: median is the mean of both elements" {
-        median(listOf(2.0f, 6.0f)) shouldBe (4.0f plusOrMinus tolerance)
+    "Size 2: median is the middle of both elements" {
+        median(listOf(8.0f, 2.0f)) shouldBe (5.0f plusOrMinus tolerance)
     }
 
-    "Size of 3: median is the middle element of unsorted input" {
-        median(listOf(9.0f, 1.0f, 5.0f)) shouldBe (5.0f plusOrMinus tolerance)
+    "Size 3: median is the middle element when input is unsorted" {
+        median(listOf(20.0f, 3.0f, 4.0f)) shouldBe (4.0f plusOrMinus tolerance)
     }
 
-    "Size of 4: median is the mean of the middle two of unsorted input" {
-        median(listOf(10.0f, 1.0f, 4.0f, 2.0f)) shouldBe (3.0f plusOrMinus tolerance)
+    "Size 4: median is the mean of the middle two elements when input is unsorted" {
+        median(listOf(15.0f, 2.0f, 6.0f, 4.0f)) shouldBe (5.0f plusOrMinus tolerance)
     }
 })
